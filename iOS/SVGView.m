@@ -21,6 +21,8 @@
     {
         _document = [doc retain];
         [self.layer addSublayer:layer];
+        self.opaque = YES;
+        self.layer.opaque = YES;
     }
     return self;
 }
@@ -31,6 +33,8 @@
 	self = [self initWithFrame:CGRectMake(0.0f, 0.0f, document.width, document.height)];
 	if (self) {
 		[self setDocument:document];
+        self.opaque = YES;
+        self.layer.opaque = YES;
 	}
 	return self;
 }
