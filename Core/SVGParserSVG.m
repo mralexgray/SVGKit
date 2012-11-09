@@ -82,7 +82,9 @@ static NSSet *_SVGParserSVGSupportedTags;
 //	if( [[self supportedNamespaces] containsObject:prefix] ) //this is checked by SVGParser
 //	{
 		NSObject* result = nil;
-		
+        SVGElement *element = nil;
+    @autoreleasepool {
+        
 		// handle svg:svg tag separately
 		if ([name isEqualToString:@"svg"]) {
 			result = svgDocument;
@@ -100,7 +102,7 @@ static NSSet *_SVGParserSVGSupportedTags;
 #endif
 		}
 		
-		SVGElement *element = [[elementClass alloc] initWithDocument:svgDocument name:name];
+		element = [[elementClass alloc] initWithDocument:svgDocument name:name];
     
         if( [parent isKindOfClass:[SVGElement class]] )
             [element setParent:(SVGElement *)parent];
@@ -122,7 +124,7 @@ static NSSet *_SVGParserSVGSupportedTags;
 			[attributes removeObjectForKey:@"style"];
 			[attributes addEntriesFromDictionary:[SVGParser NSDictionaryFromCSSAttributes:style]];
 		}
-        
+    }
 		[element parseAttributes:attributes];
 		
 		return [element autorelease];

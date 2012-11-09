@@ -291,36 +291,39 @@ static NSMutableSet *_parserExtensions = nil;
 	
 		for( NSObject<SVGParserExtension>* subParser in self.parserExtensions )
 		{
-			if( [[subParser supportedTags] containsObject:name]
-			&& [[subParser supportedNamespaces] containsObject:prefix] )
-			{
-				NSObject* subParserResult = nil;
-				
-                if( nil != (subParserResult = [subParser handleStartElement:name document:_document xmlns:prefix attributes:attributes parentObject:[(SVGParserStackItem *)[_elementStack lastObject] item]]) )
+            @autoreleasepool {
+                
+                if( [[subParser supportedTags] containsObject:name]
+                   && [[subParser supportedNamespaces] containsObject:prefix] )
                 {
+                    NSObject* subParserResult = nil;
+                    
+                    if( nil != (subParserResult = [subParser handleStartElement:name document:_document xmlns:prefix attributes:attributes parentObject:[(SVGParserStackItem *)[_elementStack lastObject] item]]) )
+                    {
 #ifdef SVGPARSER_NOTIFY_SUBPARSER_HANDOFF
-                    NSLog(@"[%@] tag: <%@:%@> -- handled by subParser: %@", [self class], prefix, name, subParser );
+                        NSLog(@"[%@] tag: <%@:%@> -- handled by subParser: %@", [self class], prefix, name, subParser );
 #endif
-				
-                    SVGParserStackItem* stackItem = [[SVGParserStackItem alloc] init];
-                    stackItem.parserForThisItem = subParser;
-                    stackItem.item = subParserResult;
-                    
-                    [_elementStack addObject:stackItem];
-                    [stackItem release];
-                    
-                    if ([subParser createdItemShouldStoreContent:stackItem.item]) {
-                        [_storedChars setString:@""];
-                        _storingChars = YES;
+                        
+                        SVGParserStackItem* stackItem = [[SVGParserStackItem alloc] init];
+                        stackItem.parserForThisItem = subParser;
+                        stackItem.item = subParserResult;
+                        
+                        [_elementStack addObject:stackItem];
+                        [stackItem release];
+                        
+                        if ([subParser createdItemShouldStoreContent:stackItem.item]) {
+                            [_storedChars setString:@""];
+                            _storingChars = YES;
+                        }
+                        else {
+                            _storingChars = NO;
+                        }
+                        return;
                     }
-                    else {
-                        _storingChars = NO;
-                    }
-                    return;
+                    
                 }
-				
-			}
-		}
+            }
+        }
 	
 #ifdef SVG_PARSER_ERROR_UNPARSED_TAG
 	NSLog(@"[%@] ERROR: could not find a parser for tag: <%@:%@>; adding empty placeholder", [self class], prefix, name );
@@ -335,57 +338,59 @@ static NSMutableSet *_parserExtensions = nil;
 static void startElementSAX (void *ctx, const xmlChar *localname, const xmlChar *prefix,
 							 const xmlChar *URI, int nb_namespaces, const xmlChar **namespaces,
 							 int nb_attributes, int nb_defaulted, const xmlChar **attributes) {
-	SVGParser *self = (SVGParser *) ctx;
-	
-	NSString *name = [[NSString alloc] initWithUTF8String:(const char *)localname];//NSStringFromLibxmlString(localname);
-	NSMutableDictionary *attrs = NSDictionaryCreateFromLibxmlAttributes(attributes, nb_attributes);
-	
-	//NSString *url = NSStringFromLibxmlString(URI);
-    
-    /* unused currently
-	NSString *prefix2 = nil;
-	if( prefix != NULL )
-		prefix2 = NSStringFromLibxmlString(prefix);
-	*/
-     
-     
-	NSString *objcURIString = nil;
-	if( URI != NULL )
-		objcURIString = [[NSString alloc] initWithUTF8String:(const char *)URI];// NSStringFromLibxmlString(URI);
-	
+    @autoreleasepool {
+        
+        SVGParser *self = (SVGParser *) ctx;
+        
+        NSString *name = [[NSString alloc] initWithUTF8String:(const char *)localname];//NSStringFromLibxmlString(localname);
+        NSMutableDictionary *attrs = NSDictionaryCreateFromLibxmlAttributes(attributes, nb_attributes);
+        
+        //NSString *url = NSStringFromLibxmlString(URI);
+        
+        /* unused currently
+         NSString *prefix2 = nil;
+         if( prefix != NULL )
+         prefix2 = NSStringFromLibxmlString(prefix);
+         */
+        
+        
+        NSString *objcURIString = nil;
+        if( URI != NULL )
+            objcURIString = [[NSString alloc] initWithUTF8String:(const char *)URI];// NSStringFromLibxmlString(URI);
+        
 #if DEBUG_VERBOSE_LOG_EVERY_TAG
-	NSLog(@"[%@] DEBUG_VERBOSE: <%@%@> (namespace URL:%@), attributes: %i", [self class], (prefix2==nil)?@"":[NSString stringWithFormat:@"%@:",prefix2], name, (URI==NULL)?@"n/a":objcURIString, nb_attributes );
-    
-	if( prefix2 == nil )
-	{
-		/* The XML library allows this, although it's very unhelpful when writing application code */
-		
-		/* Let's find out what namespaces DO exist... */
-		
-		/*
-		 
-		 TODO / DEVELOPER WARNING: the library says nb_namespaces is the number of elements in the array,
-		 but it keeps returning nil pointer (not always, but often). WTF? Not sure what we're doing wrong
-		 here, but commenting it out for now...
-		 
-		if( nb_namespaces > 0 )
-		{
-			for( int i=0; i<nb_namespaces; i++ )
-			{
-				NSLog(@"[%@] DEBUG: found namespace [%i] : %@", [self class], i, namespaces[i] );
-			}
-		}
-		else
-			NSLog(@"[%@] DEBUG: there are ZERO namespaces!", [self class] );
-		 */
-	}
+        NSLog(@"[%@] DEBUG_VERBOSE: <%@%@> (namespace URL:%@), attributes: %i", [self class], (prefix2==nil)?@"":[NSString stringWithFormat:@"%@:",prefix2], name, (URI==NULL)?@"n/a":objcURIString, nb_attributes );
+        
+        if( prefix2 == nil )
+        {
+            /* The XML library allows this, although it's very unhelpful when writing application code */
+            
+            /* Let's find out what namespaces DO exist... */
+            
+            /*
+             
+             TODO / DEVELOPER WARNING: the library says nb_namespaces is the number of elements in the array,
+             but it keeps returning nil pointer (not always, but often). WTF? Not sure what we're doing wrong
+             here, but commenting it out for now...
+             
+             if( nb_namespaces > 0 )
+             {
+             for( int i=0; i<nb_namespaces; i++ )
+             {
+             NSLog(@"[%@] DEBUG: found namespace [%i] : %@", [self class], i, namespaces[i] );
+             }
+             }
+             else
+             NSLog(@"[%@] DEBUG: there are ZERO namespaces!", [self class] );
+             */
+        }
 #endif
-	
-	[self handleStartElement:name xmlns:objcURIString attributes:attrs];
-    [attrs release];
-    [name release];
-    if( objcURIString != nil )
+        
+        [self handleStartElement:name xmlns:objcURIString attributes:attrs];
+        [attrs release];
+        [name release];
         [objcURIString release];
+    }
 }
 
 - (void)handleEndElement:(NSString *)name {
@@ -590,7 +595,8 @@ static NSString *NSStringFromLibxmlString (const xmlChar *string) {
 
 static NSMutableDictionary *NSDictionaryCreateFromLibxmlAttributes (const xmlChar **attrs, int attr_ct) {
 	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-//	NSString *keyString = nil; //less peak memory than multiple auto-released strings, since key is copied
+	NSString *keyString = nil; //less peak memory than multiple auto-released strings, since key is copied
+	NSString *valueString = nil;
     
     NSUInteger limit = attr_ct * 5;
 	for (int i = 0; i < limit/*attr_ct * 5*/; i += 5) {
@@ -602,11 +608,13 @@ static NSMutableDictionary *NSDictionaryCreateFromLibxmlAttributes (const xmlCha
 		strncpy(val, begin, vlen);
 		val[vlen] = '\0';
 		
-//        keyString = [[NSString alloc] initWithUTF8String:(const char*)attrs[i]];
-		[dict setObject:[NSString stringWithUTF8String:val]
-				 forKey:[NSString stringWithUTF8String:(const char*)attrs[i]]];
+        keyString = [[NSString alloc] initWithUTF8String:(const char*)attrs[i]];
+        valueString = [[NSString alloc] initWithUTF8String:val];
         
-//        [keyString release];
+		[dict setObject:valueString forKey:keyString];
+        
+        [valueString release];
+        [keyString release];
 	}
 	
 	return dict;

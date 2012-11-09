@@ -28,11 +28,18 @@
 
 -(NSDictionary *)dictionaryByMergingDictionary:(NSDictionary *)lowPriority overridenByDictionary:(NSDictionary *)highPriority
 {
-    NSArray *allKeys = [[lowPriority allKeys] arrayByAddingObjectsFromArray:[highPriority allKeys]];
+    NSDictionary *result = nil;
     
-    NSArray *allValues = [[lowPriority allValues] arrayByAddingObjectsFromArray:[highPriority allValues]];
+    @autoreleasepool {
+        
+        NSArray *allKeys = [[lowPriority allKeys] arrayByAddingObjectsFromArray:[highPriority allKeys]];
+        
+        NSArray *allValues = [[lowPriority allValues] arrayByAddingObjectsFromArray:[highPriority allValues]];
+        
+        result = [[NSDictionary dictionaryWithObjects:allValues forKeys:allKeys] retain];
+    }
     
-    return [NSDictionary dictionaryWithObjects:allValues forKeys:allKeys];
+    return [result autorelease];
 }
 
 
@@ -119,9 +126,16 @@
 	
 	for (CALayer *currentLayer in sublayers) {
 		CGRect frame = currentLayer.frame;
+        
 		frame.origin.x -= mainRect.origin.x;
 		frame.origin.y -= mainRect.origin.y;
 		
+        if(isnan(frame.origin.x) || isinf(frame.origin.x))
+            frame.origin.x = 0;
+        
+        if(isnan(frame.origin.y) || isinf(frame.origin.y))
+            frame.origin.y = 0;
+        
 		currentLayer.frame = CGRectIntegral(frame);
 	}
 }

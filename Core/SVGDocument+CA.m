@@ -91,13 +91,16 @@
     
 	for (SVGElement *child in element.children) {
 		if ([child conformsToProtocol:@protocol(SVGLayeredElement)]) {
-			CALayer *sublayer = layerWithElement(self, _cmd, child);//[self layerWithElement:(id<SVGLayeredElement>)child];
-
-			if (!sublayer) {
-				continue;
+            @autoreleasepool {
+                
+                CALayer *sublayer = layerWithElement(self, _cmd, child);//[self layerWithElement:(id<SVGLayeredElement>)child];
+                
+                if (!sublayer) {
+                    continue;
+                }
+                
+                [layer addSublayer:sublayer];
             }
-
-			[layer addSublayer:sublayer];
 		}
 	}
 	

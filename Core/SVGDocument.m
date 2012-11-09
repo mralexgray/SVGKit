@@ -158,12 +158,15 @@ static NSCache *_sharedDocuments;
 		_width = _height = 100;
 		
 		NSError* parseError = nil;
-		if (![self parseFileAtPath:aPath error:&parseError]) {
-			NSLog(@"[%@] MISSING OR CORRUPT FILE, OR FILE USES FEATURES THAT SVGKit DOES NOT YET SUPPORT, COULD NOT CREATE DOCUMENT: path = %@, error = %@", [self class], aPath, parseError);
-			
-			[self release];
-			return nil;
-		}
+        @autoreleasepool {
+            
+            if (![self parseFileAtPath:aPath error:&parseError]) {
+                NSLog(@"[%@] MISSING OR CORRUPT FILE, OR FILE USES FEATURES THAT SVGKit DOES NOT YET SUPPORT, COULD NOT CREATE DOCUMENT: path = %@, error = %@", [self class], aPath, parseError);
+                
+                [self release];
+                return nil;
+            }
+        }
 	}
 	return self;
 }
@@ -302,9 +305,9 @@ static NSCache *_sharedDocuments;
         result = [parser parse:error];
     }
     
-	if (!result) 
+	if (!result && error)
     {
-		NSLog(@"Parser error: %@", error);
+		NSLog(@"Parser error: %@", *error);
 	}
     
 	[parser release];
