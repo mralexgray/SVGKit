@@ -173,7 +173,7 @@ static NSMutableSet *_parserExtensions = nil;
 		}
 	}
     
-	FILE *file;
+	FILE *file = NULL;
 	if( self.sourceURL == nil )
 	{
         const char *cPath = [_path fileSystemRepresentation];
