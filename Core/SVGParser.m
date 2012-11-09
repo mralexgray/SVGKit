@@ -224,7 +224,8 @@ static NSMutableSet *_parserExtensions = nil;
     
 	if( errorForCurrentParse != nil )
 	{
-		*outError = errorForCurrentParse;
+        if(*outError)
+            *outError = errorForCurrentParse;
 		_failed = TRUE;
 	}
     
