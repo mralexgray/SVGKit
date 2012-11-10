@@ -18,7 +18,7 @@
     @protected
     NSMutableArray *_stops;
     
-    @private
+    @public
     NSArray *colors, *locations;
 }
 

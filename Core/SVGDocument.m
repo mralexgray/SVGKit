@@ -15,6 +15,7 @@
 #import "SVGParserStyles.h"
 #import "SVGTitleElement.h"
 #import "SVGPathElement.h"
+#import "SVGGradientElement.h"
 
 #import "SVGParserSVG.h"
 
@@ -458,9 +459,53 @@ CGPoint relativePosition(CGPoint point, CGRect withRect)
     if( filledLayer != nil && _fillLayersByUrlId != nil ) //this nil check here is distrubing but blocking
     {
         SVGGradientElement *svgGradient = [_fillLayersByUrlId objectForKey:idName];
+        
         if( svgGradient != nil )
         {
             CAGradientLayer *gradientLayer = (CAGradientLayer *)[svgGradient autoreleasedLayer];
+            
+            CGFloat components[4] = { 0, 0, 0, 1 };
+            int count = 0;
+            
+            for(id obj in gradientLayer.colors) {
+                
+                CGColorRef col = (CGColorRef)obj;
+                
+                if(CGColorSpaceGetModel(CGColorGetColorSpace(col)) != kCGColorSpaceModelRGB)
+                    break;
+                
+                const CGFloat *comps = CGColorGetComponents(col);
+                
+                components[0] += comps[0];
+                components[1] += comps[1];
+                components[2] += comps[2];
+                
+                count++;
+            }
+            
+            if(count) {
+                
+                components[0] /= count;
+                components[1] /= count;
+                components[2] /= count;
+                
+                CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+                
+                CGColorRef color = CGColorCreate(colorSpace, components);
+                
+                CGColorSpaceRelease(colorSpace);
+                
+                filledLayer.fillColor = color;
+                
+                CGColorRelease(color);
+            }
+            else if(gradientLayer.colors.count) {
+                
+                filledLayer.fillColor = (CGColorRef)[gradientLayer.colors objectAtIndex:0];
+                
+            }
+            
+            return filledLayer;
             
 //            CGRect filledLayerFrame = filledLayer.frame;
             CGRect docBounds = [self bounds];
