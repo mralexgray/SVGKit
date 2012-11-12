@@ -27,6 +27,12 @@
 	if ([layer.name isEqualToString:identifier]) {
 		return layer;
 	}
+    
+    NSString *looseIdent = [identifier stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    
+    if ([layer.name isEqualToString:looseIdent]) {
+		return layer;
+	}
 	
 	for (CALayer *child in layer.sublayers) {
 		CALayer *resultingLayer = [self layerWithIdentifier:identifier layer:child];
