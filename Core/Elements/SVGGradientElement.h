@@ -26,4 +26,6 @@
 
 -(void)addStop:(SVGGradientStop *)gradientStop;
 
+-(CALayer *)autoreleasedLayer;
+
 @end

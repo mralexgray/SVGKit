@@ -241,7 +241,7 @@ static NSCache *_sharedDocuments;
 //        }
         
 		if (![self parseFileAtPath:aPath]) {
-			NSLog(@"[%@] - %@ MISSING FILE, COULD NOT CREATE DOCUMENT: path = %@", _cmd, [self class], aPath);
+			NSLog(@"%@ MISSING FILE, COULD NOT CREATE DOCUMENT: path = %@", [self class], aPath);
 			
 			[self release];
 			return nil;
