@@ -17,6 +17,20 @@
 		3B86B3DD148C66AE0082ACCF /* Text.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3B86B3D6148C66AE0082ACCF /* Text.svg */; };
 		3B86B3E1148C66B50082ACCF /* Monkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B86B3DF148C66B50082ACCF /* Monkey.png */; };
 		3B86B3E2148C66B50082ACCF /* Note.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B86B3E0148C66B50082ACCF /* Note.png */; };
+		7B23EE9E1659C58E00334BF8 /* attachment_add.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7B23EE921659C58E00334BF8 /* attachment_add.svg */; };
+		7B23EE9F1659C58E00334BF8 /* cd_security.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7B23EE931659C58E00334BF8 /* cd_security.svg */; };
+		7B23EEA01659C58E00334BF8 /* attachment_down.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7B23EE941659C58E00334BF8 /* attachment_down.svg */; };
+		7B23EEA11659C58E00334BF8 /* globe.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7B23EE951659C58E00334BF8 /* globe.svg */; };
+		7B23EEA21659C58E00334BF8 /* book_audio_settings.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7B23EE961659C58E00334BF8 /* book_audio_settings.svg */; };
+		7B23EEA31659C58E00334BF8 /* book_image_security.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7B23EE971659C58E00334BF8 /* book_image_security.svg */; };
+		7B23EEA41659C58E00334BF8 /* book_text_settings.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7B23EE981659C58E00334BF8 /* book_text_settings.svg */; };
+		7B23EEA51659C58E00334BF8 /* network_wireless_edit.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7B23EE991659C58E00334BF8 /* network_wireless_edit.svg */; };
+		7B23EEA61659C58E00334BF8 /* agent.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7B23EE9A1659C58E00334BF8 /* agent.svg */; };
+		7B23EEA71659C58E00334BF8 /* bookmark_settings.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7B23EE9B1659C58E00334BF8 /* bookmark_settings.svg */; };
+		7B23EEA81659C58E00334BF8 /* database_security.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7B23EE9C1659C58E00334BF8 /* database_security.svg */; };
+		7B23EEA91659C58E00334BF8 /* group_full_security.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7B23EE9D1659C58E00334BF8 /* group_full_security.svg */; };
+		7B23EEAB1659C75400334BF8 /* AtoZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B23EEAA1659C75400334BF8 /* AtoZ.framework */; };
+		7B23EEAE1659CEBD00334BF8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B23EEAD1659CEBD00334BF8 /* QuartzCore.framework */; };
 		C9A1718013477A440048E122 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A1717F13477A440048E122 /* Cocoa.framework */; };
 		C9FC228F1347924600A91703 /* ComparisonView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FC228A1347924600A91703 /* ComparisonView.m */; };
 		C9FC22901347924600A91703 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FC228C1347924600A91703 /* MainWindowController.m */; };
@@ -74,6 +88,20 @@
 		3B86B3D6148C66AE0082ACCF /* Text.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Text.svg; sourceTree = "<group>"; };
 		3B86B3DF148C66B50082ACCF /* Monkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Monkey.png; sourceTree = "<group>"; };
 		3B86B3E0148C66B50082ACCF /* Note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Note.png; sourceTree = "<group>"; };
+		7B23EE921659C58E00334BF8 /* attachment_add.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = attachment_add.svg; sourceTree = "<group>"; };
+		7B23EE931659C58E00334BF8 /* cd_security.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cd_security.svg; sourceTree = "<group>"; };
+		7B23EE941659C58E00334BF8 /* attachment_down.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = attachment_down.svg; sourceTree = "<group>"; };
+		7B23EE951659C58E00334BF8 /* globe.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = globe.svg; sourceTree = "<group>"; };
+		7B23EE961659C58E00334BF8 /* book_audio_settings.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = book_audio_settings.svg; sourceTree = "<group>"; };
+		7B23EE971659C58E00334BF8 /* book_image_security.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = book_image_security.svg; sourceTree = "<group>"; };
+		7B23EE981659C58E00334BF8 /* book_text_settings.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = book_text_settings.svg; sourceTree = "<group>"; };
+		7B23EE991659C58E00334BF8 /* network_wireless_edit.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = network_wireless_edit.svg; sourceTree = "<group>"; };
+		7B23EE9A1659C58E00334BF8 /* agent.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = agent.svg; sourceTree = "<group>"; };
+		7B23EE9B1659C58E00334BF8 /* bookmark_settings.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = bookmark_settings.svg; sourceTree = "<group>"; };
+		7B23EE9C1659C58E00334BF8 /* database_security.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = database_security.svg; sourceTree = "<group>"; };
+		7B23EE9D1659C58E00334BF8 /* group_full_security.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = group_full_security.svg; sourceTree = "<group>"; };
+		7B23EEAA1659C75400334BF8 /* AtoZ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AtoZ.framework; path = ../../../../../../../Library/Frameworks/AtoZ.framework; sourceTree = "<group>"; };
+		7B23EEAD1659CEBD00334BF8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = ../../../../../../../System/Library/Frameworks/QuartzCore.framework; sourceTree = "<group>"; };
 		C9A1717B13477A440048E122 /* SVGTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SVGTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A1717F13477A440048E122 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C9A1718213477A440048E122 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -97,6 +125,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B23EEAE1659CEBD00334BF8 /* QuartzCore.framework in Frameworks */,
+				7B23EEAB1659C75400334BF8 /* AtoZ.framework in Frameworks */,
 				3B86B3CD148C661C0082ACCF /* SVGKit.framework in Frameworks */,
 				C9A1718013477A440048E122 /* Cocoa.framework in Frameworks */,
 			);
@@ -117,6 +147,18 @@
 		3B86B3CF148C66AE0082ACCF /* Samples */ = {
 			isa = PBXGroup;
 			children = (
+				7B23EE921659C58E00334BF8 /* attachment_add.svg */,
+				7B23EE931659C58E00334BF8 /* cd_security.svg */,
+				7B23EE941659C58E00334BF8 /* attachment_down.svg */,
+				7B23EE951659C58E00334BF8 /* globe.svg */,
+				7B23EE961659C58E00334BF8 /* book_audio_settings.svg */,
+				7B23EE971659C58E00334BF8 /* book_image_security.svg */,
+				7B23EE981659C58E00334BF8 /* book_text_settings.svg */,
+				7B23EE991659C58E00334BF8 /* network_wireless_edit.svg */,
+				7B23EE9A1659C58E00334BF8 /* agent.svg */,
+				7B23EE9B1659C58E00334BF8 /* bookmark_settings.svg */,
+				7B23EE9C1659C58E00334BF8 /* database_security.svg */,
+				7B23EE9D1659C58E00334BF8 /* group_full_security.svg */,
 				3B86B3D0148C66AE0082ACCF /* CurvedDiamond.svg */,
 				3B86B3D1148C66AE0082ACCF /* Lion.svg */,
 				3B86B3D2148C66AE0082ACCF /* Map.svg */,
@@ -142,6 +184,8 @@
 		C9A1717013477A440048E122 = {
 			isa = PBXGroup;
 			children = (
+				7B23EEAD1659CEBD00334BF8 /* QuartzCore.framework */,
+				7B23EEAA1659C75400334BF8 /* AtoZ.framework */,
 				3B86B3C1148C66030082ACCF /* SVGKit.xcodeproj */,
 				C9FC22881347924600A91703 /* Classes */,
 				C9FC22921347926E00A91703 /* Resources */,
@@ -299,6 +343,18 @@
 				3B86B3DD148C66AE0082ACCF /* Text.svg in Resources */,
 				3B86B3E1148C66B50082ACCF /* Monkey.png in Resources */,
 				3B86B3E2148C66B50082ACCF /* Note.png in Resources */,
+				7B23EE9E1659C58E00334BF8 /* attachment_add.svg in Resources */,
+				7B23EE9F1659C58E00334BF8 /* cd_security.svg in Resources */,
+				7B23EEA01659C58E00334BF8 /* attachment_down.svg in Resources */,
+				7B23EEA11659C58E00334BF8 /* globe.svg in Resources */,
+				7B23EEA21659C58E00334BF8 /* book_audio_settings.svg in Resources */,
+				7B23EEA31659C58E00334BF8 /* book_image_security.svg in Resources */,
+				7B23EEA41659C58E00334BF8 /* book_text_settings.svg in Resources */,
+				7B23EEA51659C58E00334BF8 /* network_wireless_edit.svg in Resources */,
+				7B23EEA61659C58E00334BF8 /* agent.svg in Resources */,
+				7B23EEA71659C58E00334BF8 /* bookmark_settings.svg in Resources */,
+				7B23EEA81659C58E00334BF8 /* database_security.svg in Resources */,
+				7B23EEA91659C58E00334BF8 /* group_full_security.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,10 +438,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = required;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SVGTester-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -393,7 +452,9 @@
 					"../../Mac/**",
 				);
 				INFOPLIST_FILE = "SVGTester-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -402,10 +463,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = required;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SVGTester-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -413,7 +477,9 @@
 					"../../Mac/**",
 				);
 				INFOPLIST_FILE = "SVGTester-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

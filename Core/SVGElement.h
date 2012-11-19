@@ -17,12 +17,12 @@
 @interface SVGElement : NSObject {
   @protected
     
-#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+//#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
     SVGDocument *_document;
-#else
-    __weak SVGDocument *_document;
-#endif
-    
+//#else
+//    __weak SVGDocument *_document;
+//#endif
+
   @private
     
 	NSMutableArray *_children;

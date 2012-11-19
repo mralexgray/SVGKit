@@ -24,7 +24,7 @@
 		return;
 	}
 	
-	_original = [image retain];
+	_original = image;// retain];
 	
 	_output = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL
 													  pixelsWide:image.size.width
