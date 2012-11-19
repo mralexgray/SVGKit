@@ -14,10 +14,10 @@
 	if( boundsContains )
 	{
         BOOL pathContains = CGPathContainsPoint(self.path, NULL, p, false);
-//			for( CALayer* subLayer in self.sublayers )
-//			{
-//				NSLog(@"...contains point, Apple will now check sublayer: %@", subLayer);
-//			}
+			for( CALayer* subLayer in self.sublayers )
+			{
+				NSLog(@"...contains point, Apple will now check sublayer: %@", subLayer);
+			}
 		return pathContains;
 	}
 	return NO;

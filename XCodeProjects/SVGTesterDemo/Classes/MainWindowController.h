@@ -15,7 +15,8 @@
 }
 
 @property (nonatomic, retain) IBOutlet ComparisonView *view;
-@property (nonatomic, retain) IBOutlet NSView *view2;
+@property (nonatomic, retain) IBOutlet NSView  *view2;
+@property (nonatomic, retain) IBOutlet NSView *drawn;
 
 - (IBAction)next:(id)sender;
 - (IBAction)toggleOverlay:(id)sender;

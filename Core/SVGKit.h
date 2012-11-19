@@ -48,4 +48,6 @@
 	#import <SVGKit/SVGTitleElement.h>
 	#import <SVGKit/SVGUtils.h>
 	#import <SVGKit/SVGView.h>
+	#import <SVGKit/CAShapeLayerWithHitTest.h>
+
 #endif
