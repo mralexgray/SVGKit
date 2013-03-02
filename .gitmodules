@@ -1,3 +1,4 @@
 [submodule "calayer-exporter"]
 	path = calayer-exporter
 	url = git://github.com/ddustin/calayer-exporter.git
+	ignore = dirty
