@@ -140,16 +140,16 @@
 		D78EB3CD156F1190004D745F /* SVGParserGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EB3C2156F1190004D745F /* SVGParserGradient.m */; };
 		D78EB3CE156F1190004D745F /* SVGParserStyles.h in Headers */ = {isa = PBXBuildFile; fileRef = D78EB3C3156F1190004D745F /* SVGParserStyles.h */; };
 		D78EB3CF156F1190004D745F /* SVGParserStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EB3C4156F1190004D745F /* SVGParserStyles.m */; };
-		D78EB3D1156F1296004D745F /* SVGParserGradient.h in Headers */ = {isa = PBXBuildFile; fileRef = D78EB3C1156F1190004D745F /* SVGParserGradient.h */; };
+		D78EB3D1156F1296004D745F /* SVGParserGradient.h in Headers */ = {isa = PBXBuildFile; fileRef = D78EB3C1156F1190004D745F /* SVGParserGradient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D78EB3D2156F1296004D745F /* SVGParserGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EB3C2156F1190004D745F /* SVGParserGradient.m */; };
-		D78EB3D3156F1296004D745F /* SVGParserStyles.h in Headers */ = {isa = PBXBuildFile; fileRef = D78EB3C3156F1190004D745F /* SVGParserStyles.h */; };
+		D78EB3D3156F1296004D745F /* SVGParserStyles.h in Headers */ = {isa = PBXBuildFile; fileRef = D78EB3C3156F1190004D745F /* SVGParserStyles.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D78EB3D4156F1296004D745F /* SVGParserStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EB3C4156F1190004D745F /* SVGParserStyles.m */; };
-		D78EB3D5156F12A1004D745F /* SVGGradientElement.h in Headers */ = {isa = PBXBuildFile; fileRef = D78EB3B9156F1190004D745F /* SVGGradientElement.h */; };
+		D78EB3D5156F12A1004D745F /* SVGGradientElement.h in Headers */ = {isa = PBXBuildFile; fileRef = D78EB3B9156F1190004D745F /* SVGGradientElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D78EB3D6156F12A1004D745F /* SVGGradientElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EB3BA156F1190004D745F /* SVGGradientElement.m */; };
-		D78EB3D7156F12A1004D745F /* SVGGradientStop.h in Headers */ = {isa = PBXBuildFile; fileRef = D78EB3BB156F1190004D745F /* SVGGradientStop.h */; };
+		D78EB3D7156F12A1004D745F /* SVGGradientStop.h in Headers */ = {isa = PBXBuildFile; fileRef = D78EB3BB156F1190004D745F /* SVGGradientStop.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D78EB3D8156F12A1004D745F /* SVGGradientStop.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EB3BC156F1190004D745F /* SVGGradientStop.m */; };
-		D78EB3D9156F12A1004D745F /* SVGStyleCatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = D78EB3BD156F1190004D745F /* SVGStyleCatcher.h */; };
-		D78EB3DA156F12A1004D745F /* SVGStyleElement.h in Headers */ = {isa = PBXBuildFile; fileRef = D78EB3BE156F1190004D745F /* SVGStyleElement.h */; };
+		D78EB3D9156F12A1004D745F /* SVGStyleCatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = D78EB3BD156F1190004D745F /* SVGStyleCatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D78EB3DA156F12A1004D745F /* SVGStyleElement.h in Headers */ = {isa = PBXBuildFile; fileRef = D78EB3BE156F1190004D745F /* SVGStyleElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D78EB3DB156F12A1004D745F /* SVGStyleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EB3BF156F1190004D745F /* SVGStyleElement.m */; };
 /* End PBXBuildFile section */
 
@@ -540,6 +540,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D78EB3D3156F1296004D745F /* SVGParserStyles.h in Headers */,
+				D78EB3D9156F12A1004D745F /* SVGStyleCatcher.h in Headers */,
+				D78EB3DA156F12A1004D745F /* SVGStyleElement.h in Headers */,
+				D78EB3D1156F1296004D745F /* SVGParserGradient.h in Headers */,
+				D78EB3D5156F12A1004D745F /* SVGGradientElement.h in Headers */,
+				D78EB3D7156F12A1004D745F /* SVGGradientStop.h in Headers */,
 				C9379C5A12777AEC00B0589E /* SVGView.h in Headers */,
 				3BF503A8148C614D00CC7D17 /* CALayerWithChildHitTest.h in Headers */,
 				3BF503A5148C612100CC7D17 /* CAShapeLayerWithHitTest.h in Headers */,
@@ -569,12 +575,6 @@
 				66213515148AF4F7006881E1 /* SVGDefsElement.h in Headers */,
 				66213519148AF4F7006881E1 /* SVGCircleElement.h in Headers */,
 				662134F5148AF4F7006881E1 /* SVGKit.h in Headers */,
-				D78EB3D1156F1296004D745F /* SVGParserGradient.h in Headers */,
-				D78EB3D3156F1296004D745F /* SVGParserStyles.h in Headers */,
-				D78EB3D5156F12A1004D745F /* SVGGradientElement.h in Headers */,
-				D78EB3D7156F12A1004D745F /* SVGGradientStop.h in Headers */,
-				D78EB3D9156F12A1004D745F /* SVGStyleCatcher.h in Headers */,
-				D78EB3DA156F12A1004D745F /* SVGStyleElement.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,7 +624,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "SVGKit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -760,6 +760,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -771,9 +773,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SVGKit_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "@executable_path/../Frameworks";
+				INSTALL_PATH = "@loader_path/Frameworks";
 				PRODUCT_NAME = SVGKit;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -783,6 +786,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -791,9 +796,10 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SVGKit_Prefix.pch;
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "@executable_path/../Frameworks";
+				INSTALL_PATH = "@loader_path/Frameworks";
 				PRODUCT_NAME = SVGKit;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -803,11 +809,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -818,10 +829,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SDKROOT = macosx;
 			};

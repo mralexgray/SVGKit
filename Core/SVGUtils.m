@@ -468,8 +468,8 @@ CGColorRef CGColorWithSVGColor (SVGColor color) {
 							   alpha:RGB_N(color.a)].CGColor;
 #else
     
-#warning CGColorWithSVGColor returns retained object on non-IOS platforms
-    
+//#warning CGColorWithSVGColor returns retained object on non-IOS platforms
+
 	outColor = CGColorCreateGenericRGB(RGB_N(color.r), RGB_N(color.g), RGB_N(color.b), RGB_N(color.a));
 #endif
 	

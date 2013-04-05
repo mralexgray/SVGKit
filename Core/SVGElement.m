@@ -189,7 +189,7 @@
 }
 
 - (NSString *)description {
-	return [NSString stringWithFormat:@"<%@ %p | id=%@ | localName=%@ | stringValue=%@ | children=%d>", 
+	return [NSString stringWithFormat:@"<%@ %p | id=%@ | localName=%@ | stringValue=%@ | children=%ld>",
 			[self class], self, _identifier, _localName, _stringValue, [_children count]];
 }
 
