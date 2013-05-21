@@ -586,8 +586,7 @@ static xmlSAXHandler SAXHandler = {
     structuredError,                       /* serror */
 };
 
-#pragma mark -
-#pragma mark Utility
+#pragma mark - Utility
 
 static NSString *NSStringFromLibxmlString (const xmlChar *string) {
 	return [NSString stringWithUTF8String:(const char *) string];
