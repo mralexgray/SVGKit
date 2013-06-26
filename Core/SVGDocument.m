@@ -328,13 +328,13 @@ static NSCache *_sharedDocuments;
 
 
 -(BOOL)parseFileAtURL:(NSURL *)url error:(NSError**) error {
-	SVGParser *parser = [[SVGParser alloc] initWithURL:url document:self];
-    
-    [parser setParserExtensions:[SVGDocument generalExtensions]];
-    
-    BOOL result = [parser parse:error];
+
+
+	SVGParser *parser = [SVGParser.alloc initWithURL:url document:self];
+   [parser setParserExtensions:SVGDocument.generalExtensions];
+   BOOL result = [parser parse:error];
 	
-	if (!result) 
+	if (!result && error != NULL)
 		NSLog(@"[%@] SVGKit Parse error: %@", [self class], *error);
 	
 	[parser release];

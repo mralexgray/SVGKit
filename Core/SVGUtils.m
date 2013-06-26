@@ -422,39 +422,24 @@ CGMutablePathRef CreateSVGPathFromPointsInString (const char *string, boolean_t 
 		
 		if (c == '\n' || c == '\t' || c == ' ' || c == ',' || c == '\0') {
 			accum[accumIdx] = '\0';
-			
 			static float x, y;
-			
 			if (currComponent == 0 && accumIdx != 0) {
 				sscanf( accum, "%g", &x );
 				currComponent++;
 			}
 			else if (currComponent == 1) {
-				
 				sscanf( accum, "%g", &y );
-				
-				if (CGPathIsEmpty(path)) {
-					CGPathMoveToPoint(path, NULL, x, y);
-				}
-				else {
-					CGPathAddLineToPoint(path, NULL, x, y);
-				}
-				
+				if (CGPathIsEmpty(path)) CGPathMoveToPoint(path, NULL, x, y);
+				else CGPathAddLineToPoint(path, NULL, x, y);
 				currComponent = 0;
 			}
 			
 			bzero(accum, MAX_ACCUM);
 			accumIdx = 0;
 		}
-		else if (isdigit(c) || c == '.') { // is digit or decimal separator?
-			accum[accumIdx++] = c;
-		}
+		else if (isdigit(c) || c == '.') accum[accumIdx++] = c; // is digit or decimal separator?
 	}
-	
-	if (close) {
-		CGPathCloseSubpath(path);
-	}
-	
+	if (close) CGPathCloseSubpath(path);
 	return path;
 }
 
@@ -473,5 +458,5 @@ CGColorRef CGColorWithSVGColor (SVGColor color) {
 	outColor = CGColorCreateGenericRGB(RGB_N(color.r), RGB_N(color.g), RGB_N(color.b), RGB_N(color.a));
 #endif
 	
-	return outColor;
+	return CGColorCreateCopy(outColor) ;
 }
