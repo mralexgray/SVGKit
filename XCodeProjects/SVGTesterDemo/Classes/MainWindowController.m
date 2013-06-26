@@ -9,6 +9,26 @@
 #import <AtoZ/AtoZ.h>
 #import <QuartzCore/QuartzCore.h>
 
+@implementation  DrawnView
+
+
+- (void) drawRect:(NSRect)dirtyRect
+
+{
+
+	CAL* lay = [self.svg layerTree];
+	[lay sublayersBlock:^(CALayer *layer) {
+		if ( [layer isKindOfClass:[CAShapeLayerWithHitTest class]]) {
+			CGPathRef p = ((CAShapeLayerWithHitTest*)layer).path;
+			NSBezierPath *bez = [NSBezierPath bezierPathWithCGPath:p];
+			[RANDOMCOLOR setStroke];
+			[bez setLineWidth:4];
+			[bez stroke];
+		}
+	}];
+}
+
+@end
 @implementation MainWindowController
 {
 CGP dragStart;
@@ -29,6 +49,19 @@ CAL* root;
 //	@"/Volumes/2T/ServiceData/git/WebKit/LayoutTests/svg/custom";
 //	@"/Volumes/2T/ServiceData/git/WebKit/LayoutTests/svg/W3C-SVG-1.1";
 	_names = [[AZFILEMANAGER pathsOfContentsOfDirectory:_path] filter:^BOOL(id object) { return [object endsWith:@".svg"]; }];
+
+
+//	[AZStopwatch named:@"mono" block:^{
+//	[[NSImage contactSheetWith:[NSIMG monoIcons] sized:AZSizeFromDimension(256) spaced:AZSizeFromDimension(25) columns:10 withName: YES]openInPreview];
+//	}];
+//	[AZStopwatch named:@"svgrender" block:^{
+//	NSA* rendered = [_names map:^id(id obj) {
+//		SVGDocument *document = [SVGDocument documentWithContentsOfFile:obj];
+//		return [[document layerTree]renderToImageWithContextSize:AZSizeFromDimension(256)];
+//	}];
+//	[[NSImage contactSheetWith:rendered sized:AZSizeFromDimension(256) spaced:AZSizeFromDimension(25) columns:10 withName: YES]openInPreview];
+//	}];
+
 	} return self;
 }
 
@@ -58,17 +91,24 @@ CAL* root;
 
 
 - (IBAction)next:(id)sender {
-	NSString *name = [_names randomElement];
-	AZLOG(name);
-	SVGDocument *document = [SVGDocument documentWithContentsOfFile:name];
-	[root removeFromSuperlayer];
-	root = [document layerTree];
-//	tLayer = [CATransformLayer layer];
-	root.position = _view2.center;
-	root.anchorPoint = (CGP){.5,.5};
-	root.transform = CATransform3DMakeScale(5, -5, 1);
-//	tLayer.sublayers = @[root];
-	[_view2.layer addSublayer:root];
+
+	[AZStopwatch named:@"svg" block:^{
+
+		NSString *name = [_names randomElement];
+		AZLOG(name);
+		SVGDocument *document = [SVGDocument documentWithContentsOfFile:name];
+		self.drawn.svg = document;
+		[self.drawn setNeedsDisplay:YES];
+		[root removeFromSuperlayer];
+		root = [document layerTree];
+	//	tLayer = [CATransformLayer layer];
+		root.position = _view2.center;
+		root.anchorPoint = (CGP){.5,.5};
+		root.transform = CATransform3DMakeScale(5, -5, 1);
+	//	tLayer.sublayers = @[root];
+		[_view2.layer addSublayer:root];
+	}];
+	
 }
 
 - (void)windowDidLoad {
